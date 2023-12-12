@@ -1,3 +1,5 @@
+import json
+
 import pandas as pd
 from dagster import asset
 from fsspec.implementations.http import HTTPFileSystem
@@ -76,7 +78,9 @@ def raw_passport_scores() -> pd.DataFrame:
 
 @asset
 def raw_projects() -> pd.DataFrame:
-    return chain_file_aggregator("projects.json")
+    projects = chain_file_aggregator("projects.json")
+    projects['json_metadata'] = projects['metadata'].apply(json.dumps)
+    return projects
 
 
 @asset
