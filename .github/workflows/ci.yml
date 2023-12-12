@@ -46,15 +46,6 @@ jobs:
         asset_path: ${{ github.workspace }}/data/dbt.duckdb
         asset_name: dbt.duckdb
 
-    - name: Upload to IPFS
-      uses: web3-storage/add-to-web3@v2
-      id: web3
-      with:
-        web3_token: ${{ secrets.WEB3_STORAGE_TOKEN }}
-        path_to_add: 'data'
-
-    - run: echo ${{ steps.web3.outputs.cid }}
-    - run: echo ${{ steps.web3.outputs.url }}
 
     - name: Publish release
       uses: StuYarrow/publish-release@v1.1.2
