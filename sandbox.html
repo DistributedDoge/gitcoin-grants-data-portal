@@ -115,34 +115,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Welcome! This is the result of a PoC for a Gitcoin Grants Data Portal.</p>
-<p>You can access the output files from here:</p>
-<ul>
-<li><a href="/passport_scores.parquet">Passport Scores</a></li>
-<li><a href="/round_votes.parquet">Votes</a></li>
-</ul>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Data and models shown here are probably not accurate!</p>
-</div>
-</div>
+<p>You can access the <a href="https://ipfs.filebase.io/ipns/k51qzi5uqu5dhn3p5xdkp8n6azd4l1mma5zujinkeewhvuh5oq4qvt7etk9tvc/">latests output files on IPFS here</a>!</p>
 <section id="data-examples" class="level2">
 <h2 class="anchored" data-anchor-id="data-examples">Data Examples</h2>
 <section id="passport-scores" class="level4">
 <h4 class="anchored" data-anchor-id="passport-scores">Passport Scores</h4>
-<div id="cell-5" class="cell" data-execution_count="6">
+<div id="cell-4" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ggdp.db <span class="im">import</span> query</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>query(<span class="st">"from passport_scores order by last_score_timestamp desc limit 10"</span>)query(<span class="st">"from passport_scores order by last_score_timestamp desc limit 10"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>query(<span class="st">"from passport_scores order by last_score_timestamp desc limit 10"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
@@ -282,7 +265,7 @@ Warning
 </section>
 <section id="prices" class="level3">
 <h3 class="anchored" data-anchor-id="prices">Prices</h3>
-<div id="cell-7" class="cell" data-execution_count="10">
+<div id="cell-6" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>query(<span class="st">"from public.raw_prices order by timestamp desc limit 10"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -403,7 +386,7 @@ Warning
 </section>
 <section id="projects" class="level3">
 <h3 class="anchored" data-anchor-id="projects">Projects</h3>
-<div id="cell-9" class="cell" data-execution_count="11">
+<div id="cell-8" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>query(<span class="st">"from public.raw_projects order by createdAtBlock desc limit 5"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -485,7 +468,7 @@ Warning
 </section>
 <section id="rounds" class="level3">
 <h3 class="anchored" data-anchor-id="rounds">Rounds</h3>
-<div id="cell-11" class="cell" data-execution_count="13">
+<div id="cell-10" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>query(<span class="st">"from rounds order by created_at_block desc limit 10"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -738,7 +721,7 @@ Warning
 </section>
 <section id="votes" class="level3">
 <h3 class="anchored" data-anchor-id="votes">Votes</h3>
-<div id="cell-13" class="cell" data-execution_count="14">
+<div id="cell-12" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>query(<span class="st">"from round_votes order by amount_usd desc limit 10"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -938,7 +921,7 @@ Warning
 <section id="sample-queries" class="level2">
 <h2 class="anchored" data-anchor-id="sample-queries">Sample Queries</h2>
 <p>Top contributors for chain 1!</p>
-<div id="cell-16" class="cell" data-execution_count="15">
+<div id="cell-15" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>query(</span>
