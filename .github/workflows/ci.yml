@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 10 * * 1"
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.11
+        cache: pip
+
+    - name: Install dependencies
+      run: |
+        pip install -e .
+
+    - name: Run
+      run: |
+        make run
+
+    - name: Export Database
+      run: |
+        python -c 'from ggdp import db; db.export_database_to_parquet("data/local.duckdb", "tables");'
+        ls -lh tables
+
+    - uses: aquiladev/ipfs-action@master
+      id: ipfs
+      with:
+        path: ./tables
+        service: filebase
+        pinName: gitcoin-grants-data-portal-tables
+        filebaseBucket: gitcoin-grants-data-portal
+        filebaseKey: ${{ secrets.FILEBASE_KEY }}
+        filebaseSecret: ${{ secrets.FILEBASE_SECRET }}
+
+    - run: echo ${{ steps.ipfs.outputs.cid }}
+    - run: echo ${{ steps.ipfs.outputs.ipfs }}
+    - run: echo ${{ steps.ipfs.outputs.hash }}
