@@ -90,7 +90,9 @@ def raw_prices() -> pd.DataFrame:
 
 @asset
 def raw_rounds() -> pd.DataFrame:
-    return chain_file_aggregator("rounds.json")
+    rounds = chain_file_aggregator("rounds.json")
+    rounds['metadata'] = rounds['metadata'].apply(json.dumps)
+    return rounds
 
 
 @asset
@@ -100,7 +102,9 @@ def raw_round_votes() -> pd.DataFrame:
 
 @asset
 def raw_round_applications() -> pd.DataFrame:
-    return round_file_aggregator("applications.json")
+    applications = round_file_aggregator("applications.json")
+    applications['metadata'] = applications['metadata'].apply(json.dumps)
+    return applications
 
 
 @asset
