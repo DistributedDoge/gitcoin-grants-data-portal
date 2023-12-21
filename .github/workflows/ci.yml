@@ -26,10 +26,12 @@ jobs:
         
     - name: Parse Dagster logs and append to GitHub Job Summary
       run: |
-        echo "| Asset Name | Message |" >> $GITHUB_STEP_SUMMARY
-        echo "| --- | --- |" >> $GITHUB_STEP_SUMMARY
-        grep "ASSET" output.log | while IFS= read -r line; do
-          parsed_line=$(echo "$line" | awk -F ' - ' '{printf "| %s | %s |", $7, $8}')
+        echo "| Timestamp | Table Name | Status | Message |" >> $GITHUB_STEP_SUMMARY
+        echo "| --- | --- | --- | --- |" >> $GITHUB_STEP_SUMMARY
+        grep "STEP_FAILURE" output.log | while IFS= read -r line; do
+          parsed_line=$(echo "$line" | awk -F ' - ' '{printf "| %s | %s | %s | %s |", $1, $7, $8, $9}')
           echo "$parsed_line" >> $GITHUB_STEP_SUMMARY
         done
-    
+        if ! grep -q "STEP_FAILURE" output.log; then
+          echo "| | | | |" >> $GITHUB_STEP_SUMMARY
+        fi
