@@ -90,6 +90,7 @@ def raw_prices() -> pd.DataFrame:
 
 @asset
 def raw_rounds() -> pd.DataFrame:
+    raise NotImplementedError
     rounds = chain_file_aggregator("rounds.json")
     rounds['metadata'] = rounds['metadata'].apply(json.dumps)
     return rounds
