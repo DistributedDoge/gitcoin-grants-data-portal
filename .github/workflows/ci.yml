@@ -30,24 +30,17 @@ jobs:
       run: |
         make run 2>&1 | tee output.log
 
-    - name: Parse Dagster logs and append to GitHub Job Summary
-      run: |
-        echo "| Timestamp | Table Name | Status | Message |" >> $GITHUB_STEP_SUMMARY
-        echo "| --- | --- | --- | --- |" >> $GITHUB_STEP_SUMMARY
-        grep "STEP_FAILURE" output.log | while IFS= read -r line; do
-          parsed_line=$(echo "$line" | awk -F ' - ' '{printf "| %s | %s | %s | %s |", $1, $7, $8, $9}')
-          echo "$parsed_line" >> $GITHUB_STEP_SUMMARY
-        done
-        if ! grep -q "STEP_FAILURE" output.log; then
-          echo "| | | | |" >> $GITHUB_STEP_SUMMARY
-        fi
+
     
     - name: Export Database and Log File Sizes
       run: |
         python -c 'from ggdp import db; db.export_database_to_parquet("data/local.duckdb", "tables");'
+        echo "Files exported:" >> $GITHUB_STEP_SUMMARY
         {
-          echo "| File Size | Filename |"
+          echo "| Filename | File Size |"
           echo "| --- | --- |"
-          ls -lh tables | tail -n +2 | awk '{printf "| %s | %s |\n", $5, $9}'
-        } | tee -a $GITHUB_STEP_SUMMARY
+          ls -lh tables | tail -n +2 | awk '{printf "| %s | %s |\n", $9, $5}'
+        } >> $GITHUB_STEP_SUMMARY
+        echo "Files exported:"
+        ls -lh tables
 
