@@ -22,13 +22,25 @@ jobs:
         pip install -e .
     - name: Run
       run: |
-        dagster asset materialize -f ./ggdp/assets.py --select raw_rounds 2>&1 | tee output.log
+        make run 2>&1 | tee output.log
+    
+    - name: Export Database and Log File Sizes
+      run: |
+        python -c 'from ggdp import db; db.export_database_to_parquet("data/local.duckdb", "tables");'
+        {
+          echo "### Exported Files" >> $GITHUB_STEP_SUMMARY
+          echo "| File Size | Filename |"
+          echo "| --- | --- |"
+          ls -lh tables | tail -n +2 | awk '{printf "| %s | %s |\n", $5, $9}'
+        } | tee -a $GITHUB_STEP_SUMMARY
+
         
     - name: Parse Dagster logs and append to GitHub Job Summary
       run: |
+        echo "### Failed or Skipped steps" >> $GITHUB_STEP_SUMMARY
         echo "| Timestamp | Table Name | Status | Message |" >> $GITHUB_STEP_SUMMARY
         echo "| --- | --- | --- | --- |" >> $GITHUB_STEP_SUMMARY
-        grep "STEP_FAILURE" output.log | while IFS= read -r line; do
+        grep  "STEP_FAILURE|STEP_SKIPPED" output.log | while IFS= read -r line; do
           parsed_line=$(echo "$line" | awk -F ' - ' '{printf "| %s | %s | %s | %s |", $1, $7, $8, $9}')
           echo "$parsed_line" >> $GITHUB_STEP_SUMMARY
         done
