@@ -89,6 +89,7 @@ def raw_passport_scores() -> pd.DataFrame:
 
 @asset
 def raw_projects() -> pd.DataFrame:
+    raise NotImplementedError
     projects = chain_file_aggregator("projects.json")
     projects["metadata"] = projects["metadata"].apply(json.dumps)
     return projects
