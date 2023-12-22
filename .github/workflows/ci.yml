@@ -3,6 +3,9 @@ name: CI
 on:
   workflow_dispatch:
 
+env:
+  DATA_DIR: data
+
 jobs:
   run:
     runs-on: ubuntu-latest
