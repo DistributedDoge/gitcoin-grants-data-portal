@@ -25,8 +25,10 @@ jobs:
         pip install -e .
 
     - name: Run
+      id: run_make
       run: |
         make run
+        echo "::set-output name=exit_code::$?"
 
     - name: Export Database and Log File Sizes
       run: |
@@ -38,3 +40,10 @@ jobs:
           ls -lh tables | tail -n +2 | awk '{printf "| %s | %s |\n", $9, $5}'
         } >> $GITHUB_STEP_SUMMARY
         ls -lh tables
+
+    - name: Fail Job if Make Fails
+      run: |
+          if [ "${{ steps.run_make.outputs.exit_code }}" != "0" ]; then
+            echo "make run failed with exit code ${{ steps.run_make.outputs.exit_code }}"
+            exit 1
+          fi       
