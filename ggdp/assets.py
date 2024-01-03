@@ -79,6 +79,7 @@ def round_file_aggregator(json_name):
 
 @asset
 def raw_passport_scores() -> pd.DataFrame:
+    raise NotImplementedError
     file_url = f"{ALLO_INDEXER_URL}/passport_scores.json"
     df = pd.read_json(file_url)
     df = df.drop(columns=["error", "stamp_scores"])
@@ -91,6 +92,7 @@ def raw_passport_scores() -> pd.DataFrame:
 
 @asset
 def raw_projects() -> pd.DataFrame:
+    raise NotImplementedError
     projects = chain_file_aggregator("projects.json")
     projects["metadata"] = projects["metadata"].apply(json.dumps)
     return projects
@@ -98,11 +100,13 @@ def raw_projects() -> pd.DataFrame:
 
 @asset
 def raw_prices() -> pd.DataFrame:
+    raise NotImplementedError
     return chain_file_aggregator("prices.json")
 
 
 @asset
 def raw_rounds() -> pd.DataFrame:
+    raise NotImplementedError
     rounds = chain_file_aggregator("rounds.json")
     rounds["metadata"] = rounds["metadata"].apply(json.dumps)
     return rounds
@@ -110,11 +114,13 @@ def raw_rounds() -> pd.DataFrame:
 
 @asset
 def raw_round_votes() -> pd.DataFrame:
+    raise NotImplementedError
     return round_file_aggregator("votes.json")
 
 
 @asset
 def raw_round_applications() -> pd.DataFrame:
+    raise NotImplementedError
     applications = round_file_aggregator("applications.json")
     applications["metadata"] = applications["metadata"].apply(json.dumps)
     return applications
@@ -122,6 +128,7 @@ def raw_round_applications() -> pd.DataFrame:
 
 @asset
 def raw_round_contributors() -> pd.DataFrame:
+    raise NotImplementedError
     df = round_file_aggregator("contributors.json")
     df["roundId"] = '"' + df["roundId"] + '"'
     return df
@@ -130,6 +137,7 @@ def raw_round_contributors() -> pd.DataFrame:
     description="Metadata for chains on which Gitcoin indexer registered at least one round. Source: `chainid.network/chains.json`"
 )
 def raw_chain_metadata(raw_rounds: pd.DataFrame) -> pd.DataFrame:
+    raise NotImplementedError
     interesting_chains = raw_rounds.chainId.unique()
 
     try:
