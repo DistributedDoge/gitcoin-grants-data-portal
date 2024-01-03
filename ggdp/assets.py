@@ -100,7 +100,6 @@ def raw_projects() -> pd.DataFrame:
 
 @asset
 def raw_prices() -> pd.DataFrame:
-    raise NotImplementedError
     return chain_file_aggregator("prices.json")
 
 
