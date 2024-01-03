@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+    - name: Fails
+      run: |
+        exit 1
+
     - name: Checkout
       uses: actions/checkout@v4
 
