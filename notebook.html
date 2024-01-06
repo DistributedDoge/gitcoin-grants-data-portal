@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.526">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -57,42 +57,106 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="sandbox_files/libs/clipboard/clipboard.min.js"></script>
-<script src="sandbox_files/libs/quarto-html/quarto.js"></script>
-<script src="sandbox_files/libs/quarto-html/popper.min.js"></script>
-<script src="sandbox_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="sandbox_files/libs/quarto-html/anchor.min.js"></script>
-<link href="sandbox_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="sandbox_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="sandbox_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="sandbox_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="sandbox_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
 
 </head>
 
-<body>
+<body class="nav-fixed">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-full">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Gitcoin Grants Data Portal</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./notebook.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Notebook</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./catalog.html" rel="" target="">
+ <span class="menu-text">Catalog</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-examples" id="toc-data-examples" class="nav-link active" data-scroll-target="#data-examples">Data Examples</a>
-  <ul class="collapse">
-  <li><a href="#prices" id="toc-prices" class="nav-link" data-scroll-target="#prices">Prices</a></li>
-  <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects">Projects</a></li>
+  <li><a href="#projects" id="toc-projects" class="nav-link active" data-scroll-target="#projects">Projects</a></li>
   <li><a href="#rounds" id="toc-rounds" class="nav-link" data-scroll-target="#rounds">Rounds</a></li>
   <li><a href="#votes" id="toc-votes" class="nav-link" data-scroll-target="#votes">Votes</a></li>
-  </ul></li>
-  <li><a href="#sample-queries" id="toc-sample-queries" class="nav-link" data-scroll-target="#sample-queries">Sample Queries</a></li>
   </ul>
 </nav>
-</div>
+    </div>
+<!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -102,7 +166,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta">
 
     
   
@@ -110,24 +174,147 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-
 </header>
 
+<p><a target="_blank" href="https://colab.research.google.com/github/davidgasquez/gitcoin-grants-data-portal/blob/main/notebooks/sandbox.ipynb"> <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"> </a></p>
+<p>First, we need to get the latest IPFS CID of the content. The hash is <a href="https://raw.githubusercontent.com/davidgasquez/gitcoin-grants-data-portal/main/data/IPFS_CID">stored in a GitHub file</a> while support for IPNS or ENS is added.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>LATEST_IPFS_CID <span class="op">=</span> requests.get(</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://raw.githubusercontent.com/davidgasquez/gitcoin-grants-data-portal/main/data/IPFS_CID"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>).text.strip()</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>GATEWAY_URL <span class="op">=</span> <span class="ss">f"https://ipfs.filebase.io/ipfs/</span><span class="sc">{</span>LATEST_IPFS_CID<span class="sc">}</span><span class="ss">/"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Once you have the latest URL, you can remotely access the data from your favorite data science tools like pandas, polars, DuckDB.</p>
+<p>For example, let’s see the number of votes per round.</p>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> duckdb</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>duckdb.sql(</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"""</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ss">    select</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ss">        round_id,</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ss">        count(distinct id) as total_votes</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ss">    from '</span><span class="sc">{</span>GATEWAY_URL<span class="sc">}</span><span class="ss">/round_votes.parquet'</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ss">    group by round_id</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ss">    order by 2 desc</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ss">    limit 10;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="ss">    """</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>).df().plot.bar(x<span class="op">=</span><span class="st">"round_id"</span>, y<span class="op">=</span><span class="st">"total_votes"</span>, title<span class="op">=</span><span class="st">"Top 10 Rounds by Votes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"2a1bd8d68c974e80be12f0bdb928be64","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>&lt;Axes: title={'center': 'Top 10 Rounds by Votes'}, xlabel='round_id'&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="notebook_files/figure-html/cell-3-output-3.png" class="img-fluid"></p>
+</div>
+</div>
+<p>We can see for example the top contributors for chain <code>1</code>.</p>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>duckdb.sql(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"""</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ss">    select</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ss">        voter,</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ss">        sum(amount_usd)</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ss">    from '</span><span class="sc">{</span>GATEWAY_URL<span class="sc">}</span><span class="ss">/round_votes.parquet'</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ss">    where chain_id = 1</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ss">    group by 1</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ss">    order by 2 desc</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ss">    limit 10</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="ss">    """</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>).df()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"929389d04a394f0cb940f42fb2298775","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<div>
 
-<p>Welcome! This is the result of a PoC for a Gitcoin Grants Data Portal.</p>
-<p>You can access the <a href="https://ipfs.filebase.io/ipns/k51qzi5uqu5dhn3p5xdkp8n6azd4l1mma5zujinkeewhvuh5oq4qvt7etk9tvc/">latests output files on IPFS here</a>!</p>
-<section id="data-examples" class="level2">
-<h2 class="anchored" data-anchor-id="data-examples">Data Examples</h2>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">voter</th>
+<th data-quarto-table-cell-role="th">sum(amount_usd)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0x8a205728f464b0755f72780df1763d1e1f0f5ba5</td>
+<td>8087.002244</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>0xbd4eb0295468c80725017f74113f5aebbd6e8d12</td>
+<td>6810.616077</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>0x839395e20bbb182fa440d08f850e6c7a8f6f0780</td>
+<td>5887.459406</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>0xd88d5b3dbe8790369799012310c31eb210eeec81</td>
+<td>5079.673008</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0x0fc338d0a925fa564171d1d7c0ffdb271ad19d49</td>
+<td>4723.094377</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>0x471e96a01962b62fe3e9e8e367f6be56e3e983d0</td>
+<td>4596.338842</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>0xc6d7522f7b012b22bc365c9c43b3dbf13b9aaff9</td>
+<td>3420.906163</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>0xb13b2db51ca77ea06b1d3e83f2615006e9a4bdad</td>
+<td>3199.346490</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>0xd21d931890d27b6e7e2e668f27931e17698e90f1</td>
+<td>3194.710788</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>0xfc66a1f969bb77eb89a314725d657312d58f1589</td>
+<td>2504.862395</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
 <section id="passport-scores" class="level4">
 <h4 class="anchored" data-anchor-id="passport-scores">Passport Scores</h4>
-<div id="cell-4" class="cell" data-execution_count="6">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ggdp.db <span class="im">import</span> query</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>query(<span class="st">"from passport_scores order by last_score_timestamp desc limit 10"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>duckdb.sql(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"from '</span><span class="sc">{</span>GATEWAY_URL<span class="sc">}</span><span class="ss">/passport_scores.parquet' order by last_score_timestamp desc limit 10"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>).df()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"f86c6f8c9b524890b1b7016e42d6b285","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="11">
 <div>
 
 
@@ -148,234 +335,113 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>0x5e5812fd1b56fce69891ad12d0ca07877be65207</td>
+<td>0x34b111ee7738604d034687e71df51bf2e5bcec1a</td>
 <td>0</td>
 <td>DONE</td>
-<td>2023-12-13 08:01:39.342000+00:00</td>
+<td>2023-12-22 14:01:39.758000+00:00</td>
 <td>ThresholdScoreCheck</td>
 <td>false</td>
-<td>11.2965</td>
+<td>13.148</td>
 <td>20.00000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>0x7d1dc32da815bdf22c58deb9d90dc4a871724250</td>
+<td>0x9454b00a48d4b694c37539fb7db4565db19e71f5</td>
 <td>0</td>
 <td>DONE</td>
-<td>2023-12-13 08:01:38.586000+00:00</td>
+<td>2023-12-22 14:01:34.449000+00:00</td>
 <td>ThresholdScoreCheck</td>
 <td>false</td>
-<td>17.8475</td>
+<td>14.459</td>
 <td>20.00000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>0x5fc32e1e33ddc5d8ad0a3d9242c83d59a914e7dd</td>
-<td>1</td>
+<td>0xbf0254783ee69b06522616bb8ba63601eb0de9cf</td>
+<td>0</td>
 <td>DONE</td>
-<td>2023-12-13 08:01:35.707000+00:00</td>
+<td>2023-12-22 14:01:32.531000+00:00</td>
 <td>ThresholdScoreCheck</td>
-<td>true</td>
-<td>27.579</td>
+<td>false</td>
+<td>9.13</td>
 <td>20.00000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>0x8ba5908a107ed29c898b00b498fcce0d88299175</td>
+<td>0x988b23cb7612b606ed17e175d99b03b607478a95</td>
 <td>1</td>
 <td>DONE</td>
-<td>2023-12-13 08:01:34.568000+00:00</td>
+<td>2023-12-22 14:01:30.785000+00:00</td>
 <td>ThresholdScoreCheck</td>
 <td>true</td>
-<td>47.4945</td>
+<td>26.5765</td>
 <td>20.00000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>0x4c5761c96044e468abc949a98694d0b48e2de70d</td>
+<td>0x5951c0fc9fceb93b4726775b89af68650c405b4a</td>
 <td>0</td>
 <td>DONE</td>
-<td>2023-12-13 08:01:33.222000+00:00</td>
+<td>2023-12-22 14:01:23.630000+00:00</td>
 <td>ThresholdScoreCheck</td>
 <td>false</td>
-<td>14.849</td>
+<td>3.830</td>
 <td>20.00000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">5</td>
-<td>0x795a4c18be0d51ce266932ebbfb536883761ec8b</td>
+<td>0xce6e190defd8c40280006bd3ea9cc997fc4ccdf0</td>
 <td>0</td>
 <td>DONE</td>
-<td>2023-12-13 08:01:32.043000+00:00</td>
+<td>2023-12-22 14:01:20.419000+00:00</td>
 <td>ThresholdScoreCheck</td>
 <td>false</td>
-<td>0</td>
+<td>15.335</td>
 <td>20.00000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">6</td>
-<td>0xf52cbefad898a6c3965a9069c0b01278c9ce6a3b</td>
-<td>1</td>
+<td>0xa4e4b2106d6691a261334518bb28c683be255a90</td>
+<td>0</td>
 <td>DONE</td>
-<td>2023-12-13 08:01:31.517000+00:00</td>
+<td>2023-12-22 14:01:13.804000+00:00</td>
 <td>ThresholdScoreCheck</td>
-<td>true</td>
-<td>32.098</td>
+<td>false</td>
+<td>9.788</td>
 <td>20.00000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">7</td>
-<td>0xc147d7845d4b13fa588383d9b62fbdf44b93ab17</td>
+<td>0x9aad207b77e2c54727597b330df0dc83a6f88b11</td>
 <td>0</td>
 <td>DONE</td>
-<td>2023-12-13 08:01:30.347000+00:00</td>
+<td>2023-12-22 14:01:09.304000+00:00</td>
 <td>ThresholdScoreCheck</td>
 <td>false</td>
-<td>11.56</td>
+<td>13.7575</td>
 <td>20.00000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">8</td>
-<td>0xaed538df546d5a41959d90ce776aee2ffd2e7a46</td>
+<td>0x12657fe1e5ec50eed73e8933e5b59df161eb1427</td>
 <td>0</td>
 <td>DONE</td>
-<td>2023-12-13 08:01:28.770000+00:00</td>
+<td>2023-12-22 14:00:56.378000+00:00</td>
 <td>ThresholdScoreCheck</td>
 <td>false</td>
-<td>0</td>
+<td>17.499</td>
 <td>20.00000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">9</td>
-<td>0xed3c8a228fd9bf827005f1d6c5290fea60179997</td>
+<td>0x1401e424be71fcb7a019b1703ad7b43ddf1a3821</td>
 <td>0</td>
 <td>DONE</td>
-<td>2023-12-13 08:01:26.815000+00:00</td>
+<td>2023-12-22 14:00:52.649000+00:00</td>
 <td>ThresholdScoreCheck</td>
 <td>false</td>
-<td>19.728</td>
+<td>13.279</td>
 <td>20.00000</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</section>
-<section id="prices" class="level3">
-<h3 class="anchored" data-anchor-id="prices">Prices</h3>
-<div id="cell-6" class="cell" data-execution_count="10">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>query(<span class="st">"from public.raw_prices order by timestamp desc limit 10"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">token</th>
-<th data-quarto-table-cell-role="th">code</th>
-<th data-quarto-table-cell-role="th">price</th>
-<th data-quarto-table-cell-role="th">timestamp</th>
-<th data-quarto-table-cell-role="th">block</th>
-<th data-quarto-table-cell-role="th">chainId</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>0x0000000000000000000000000000000000000000</td>
-<td>MATIC</td>
-<td>0.848337</td>
-<td>2023-12-13 08:00:00</td>
-<td>43514556</td>
-<td>80001</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>0x9999f7fea5938fd3b1e26a12c3f2fb024e194f97</td>
-<td>USDC</td>
-<td>1.000184</td>
-<td>2023-12-13 08:00:00</td>
-<td>43514556</td>
-<td>80001</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>0x7f5c764cbc14f9669b88837ca1490cca17c31607</td>
-<td>USDC</td>
-<td>0.999562</td>
-<td>2023-12-13 07:00:00</td>
-<td>113426012</td>
-<td>10</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>0xda10009cbd5d07dd0cecc66161fc93d7c9000da1</td>
-<td>DAI</td>
-<td>0.999778</td>
-<td>2023-12-13 07:00:00</td>
-<td>113426012</td>
-<td>10</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>0x93a5347036f69bc6f37ed2b59cbcdda927719217</td>
-<td>GIST</td>
-<td>0.999778</td>
-<td>2023-12-13 07:00:00</td>
-<td>113426012</td>
-<td>10</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>0x0000000000000000000000000000000000000000</td>
-<td>ETH</td>
-<td>2169.318890</td>
-<td>2023-12-13 07:00:00</td>
-<td>113426012</td>
-<td>10</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
-<td>0x0000000000000000000000000000000000000000</td>
-<td>MATIC</td>
-<td>0.841170</td>
-<td>2023-12-13 07:00:00</td>
-<td>51074617</td>
-<td>137</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
-<td>0x3c499c542cef5e3811e1192ce70d8cc03d5c3359</td>
-<td>USDC</td>
-<td>1.000205</td>
-<td>2023-12-13 07:00:00</td>
-<td>51074617</td>
-<td>137</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
-<td>0x0000000000000000000000000000000000000000</td>
-<td>ETH</td>
-<td>2169.318890</td>
-<td>2023-12-13 07:00:00</td>
-<td>6672037</td>
-<td>424</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
-<td>0x7c6b91d9be155a6db01f749217d76ff02a7227f2</td>
-<td>GTC</td>
-<td>1.096651</td>
-<td>2023-12-13 07:00:00</td>
-<td>6672037</td>
-<td>424</td>
 </tr>
 </tbody>
 </table>
@@ -386,12 +452,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="projects" class="level3">
 <h3 class="anchored" data-anchor-id="projects">Projects</h3>
-<div id="cell-8" class="cell" data-execution_count="11">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>query(<span class="st">"from public.raw_projects order by createdAtBlock desc limit 5"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>duckdb.sql(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"from '</span><span class="sc">{</span>GATEWAY_URL<span class="sc">}</span><span class="ss">/projects.parquet' order by created_at desc limit 5"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>).df()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 
 
@@ -399,65 +464,107 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">id</th>
-<th data-quarto-table-cell-role="th">projectNumber</th>
-<th data-quarto-table-cell-role="th">metaPtr</th>
+<th data-quarto-table-cell-role="th">project_id</th>
+<th data-quarto-table-cell-role="th">project_number</th>
+<th data-quarto-table-cell-role="th">meta_ptr</th>
 <th data-quarto-table-cell-role="th">metadata</th>
 <th data-quarto-table-cell-role="th">owners</th>
-<th data-quarto-table-cell-role="th">createdAtBlock</th>
-<th data-quarto-table-cell-role="th">chainId</th>
+<th data-quarto-table-cell-role="th">created_at_block</th>
+<th data-quarto-table-cell-role="th">chain_id</th>
+<th data-quarto-table-cell-role="th">title</th>
+<th data-quarto-table-cell-role="th">description</th>
+<th data-quarto-table-cell-role="th">website</th>
+<th data-quarto-table-cell-role="th">project_twitter</th>
+<th data-quarto-table-cell-role="th">logo_image</th>
+<th data-quarto-table-cell-role="th">banner_image</th>
+<th data-quarto-table-cell-role="th">created_at</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>0x9ea2848d4fc0cb6653a370c86c5056ff4e8cb2c647e8...</td>
-<td>399</td>
-<td>bafkreibrohb3cvul6a5wtuf3bbzd6cmg2wukebpswmiwo...</td>
-<td>{"title": "D2 Finance", "description": "D2.Fin...</td>
-<td>[0xD9785f0188823327Cc02f6b9d382F1ad61f621e8]</td>
-<td>159606537</td>
-<td>42161</td>
+<td>0x4475c3a32069a282ba501e1a1bfe526b234f19f7e9a5...</td>
+<td>1719</td>
+<td>bafkreibe4iv7yyxozkyfwj6tllypgee5d777zolt7u2li...</td>
+<td>{"title": "Keep it Crypto", "description": "Ke...</td>
+<td>[0x3034BA2edD90CC4739acbdBaD8DF8e1B63e9495E]</td>
+<td>113829217</td>
+<td>10</td>
+<td>Keep it Crypto</td>
+<td>Keep It Crypto is the brainchild of Cami Darin...</td>
+<td>https://keepitcrypto.squarespace.com/</td>
+<td>keepitcrypto_</td>
+<td>bafkreigrmib2eqa6wtpvb7ac4f57ibn24zkinehqbudqw...</td>
+<td>bafkreibqwa2lnwa64rd2kilikyslzvbuxpqwldyha2gap...</td>
+<td>1.703257e+12</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>0xe0b39513bee7c54a03f6b54b82922cbbcc4e7113dda3...</td>
-<td>398</td>
-<td>bafkreihmkgitytntj6hmr6tsw5wqjvozab2l6dyokuqz3...</td>
-<td>{"title": "Sum Pictures", "description": "A de...</td>
-<td>[0xB0abAEfc47e5b244638BFE474Fb15FC33e6A1d6A]</td>
-<td>159573761</td>
-<td>42161</td>
+<td>0x091b0831aba8670ce56a17a9bb3bc46615d39c780b1b...</td>
+<td>1718</td>
+<td>bafkreig4onpjqdr2fqqfvn2leehpwrigxatarwxyekxp6...</td>
+<td>{"title": "Keep it Crypto", "description": "Ke...</td>
+<td>[0x3034BA2edD90CC4739acbdBaD8DF8e1B63e9495E]</td>
+<td>113829213</td>
+<td>10</td>
+<td>Keep it Crypto</td>
+<td>Keep It Crypto is the brainchild of Cami Darin...</td>
+<td>https://keepitcrypto.squarespace.com/</td>
+<td>keepitcrypto_</td>
+<td>bafkreigrmib2eqa6wtpvb7ac4f57ibn24zkinehqbudqw...</td>
+<td>bafkreibqwa2lnwa64rd2kilikyslzvbuxpqwldyha2gap...</td>
+<td>1.703257e+12</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>0x2911283a4d35c5641577ee1c0d0df59f77649b06e569...</td>
-<td>397</td>
-<td>bafkreiasrf5egt5hxagh2puzycl67hektwdcxdl6lhd6t...</td>
-<td>{"title": "Oku", "description": "**Project Tit...</td>
-<td>[0xde219fe970aCBc88C63C9C4D0705837C6701495f]</td>
-<td>159509269</td>
-<td>42161</td>
+<td>0x7bc35a183db171b6e5775dd979661d682daa2adf2a32...</td>
+<td>171</td>
+<td>bafkreifvihbthmxep2wun53cnsh4t7gw6uaymzgi2yep4...</td>
+<td>{"title": "Future Relief", "description": "\"S...</td>
+<td>[0xc84BF495a639240cf55740B593Bc7CF9012d8a2D]</td>
+<td>51418040</td>
+<td>137</td>
+<td>Future Relief</td>
+<td>"Stake your crypto, donate the earnings, and g...</td>
+<td>https://futurerelief.xyz</td>
+<td>None</td>
+<td>bafkreifdijpww52sdrjtfq5p6ejyhkz6ig7uhw7amnata...</td>
+<td>bafkreihu5jhny3nokshz2ih27uxq7qxjyrlas6yjpzuvr...</td>
+<td>1.703240e+12</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>0xd4eb637cd8476dd209ef0b5b89fe4b2b145842c237de...</td>
-<td>396</td>
-<td>bafkreibjdwvd4wr4zjaewkqthaynucxzrx3r23tl7vwen...</td>
-<td>{"title": "Notum", "description": "The Notum p...</td>
-<td>[0x2bD530BBBfd1297dCD9bf12A0B5c2aDD6f403A23]</td>
-<td>159464358</td>
+<td>0xe3f7d6b20ea5aa8db90d240c2f29fcee381e8b362ea1...</td>
+<td>411</td>
+<td>bafkreig7tki5mhh73uoyh6anztanethyyhhcbcp2gfjuv...</td>
+<td>{"title": "ACryptoS", "description": "ACryptoS...</td>
+<td>[0xCcCCbE5B70E7Ba9dE405C480f9f8Cd6bA835aDEC]</td>
+<td>162530590</td>
 <td>42161</td>
+<td>ACryptoS</td>
+<td>ACryptoS, established in 2020, is a pioneering...</td>
+<td>https://app.acryptos.com</td>
+<td>acryptosdao</td>
+<td>bafkreid3ygvqifq5yzepi6hy64zgv2iwkqo5pae6tyb4d...</td>
+<td>bafkreiaeuhfcxwearfkb4hwty2v2lrvu5xztgd2y73y3b...</td>
+<td>1.703234e+12</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>0xc88a245710a49ab1b25f3e806f0e391a0769642fd0fd...</td>
-<td>395</td>
-<td>bafkreigjt6fff2gvtbarwnoaj4eelwls5cz3pwdy7hnlt...</td>
-<td>{"title": "Stead", "description": "Stead is a ...</td>
-<td>[0x6E77e78D0ee74DF94dCAD5603551e1660752a456]</td>
-<td>159319922</td>
+<td>0x30bf9b4f537054ecd775c64efc506b7f9fd72c4e1a43...</td>
+<td>410</td>
+<td>bafkreifzeixzzu2wd5ergz7bxm5yk4fjtp7myqwheetbb...</td>
+<td>{"title": "TxStreets", "description": "# TxStr...</td>
+<td>[0x6B023CBe06392E7A956C17373d6106e135427071]</td>
+<td>162342183</td>
 <td>42161</td>
+<td>TxStreets</td>
+<td># TxStreets: Interactive Blockchain Transactio...</td>
+<td>https://txstreets.com</td>
+<td>txstreetsCom</td>
+<td>bafkreidtbah4lofswniqbxn5usttouolfktb4oirhw4og...</td>
+<td>bafkreicsiwr45n4glcsgnzzvqqujo3flybxw7x5ii6aye...</td>
+<td>1.703186e+12</td>
 </tr>
 </tbody>
 </table>
@@ -468,12 +575,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="rounds" class="level3">
 <h3 class="anchored" data-anchor-id="rounds">Rounds</h3>
-<div id="cell-10" class="cell" data-execution_count="13">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>query(<span class="st">"from rounds order by created_at_block desc limit 10"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>duckdb.sql(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"from '</span><span class="sc">{</span>GATEWAY_URL<span class="sc">}</span><span class="ss">/rounds.parquet' order by created_at_block desc limit 10"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>).df()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
 <div>
 
 
@@ -491,21 +597,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">application_meta_ptr</th>
 <th data-quarto-table-cell-role="th">application_metadata</th>
 <th data-quarto-table-cell-role="th">meta_ptr</th>
-<th data-quarto-table-cell-role="th">metadata</th>
-<th data-quarto-table-cell-role="th">applications_start_time</th>
+<th data-quarto-table-cell-role="th">...</th>
 <th data-quarto-table-cell-role="th">applications_end_time</th>
 <th data-quarto-table-cell-role="th">round_start_time</th>
 <th data-quarto-table-cell-role="th">round_end_time</th>
 <th data-quarto-table-cell-role="th">created_at_block</th>
 <th data-quarto-table-cell-role="th">updated_at_block</th>
 <th data-quarto-table-cell-role="th">chain_id</th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">round_type</th>
+<th data-quarto-table-cell-role="th">program_address</th>
+<th data-quarto-table-cell-role="th">sybil_defense</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
 <td>0xe0a6f4E932b16C85318A77de43B7048863C522D2</td>
-<td>17.723494</td>
+<td>17.723946</td>
 <td>3</td>
 <td>0x912ce59144191c1204e64559fe8253a0e49e6548</td>
 <td>1.000000e+20</td>
@@ -514,14 +623,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>bafkreia2qz6iwittp5jg5q44i6zvedgccfnlumn6vs6uf...</td>
 <td>{'lastUpdatedOn': 1701883086748, 'applicationS...</td>
 <td>bafkreihaa3ec73fsujtba4xf6svwc6cyef2xjjl2weafv...</td>
-<td>{"feesPercentage": 0, "feesAddress": "", "name...</td>
-<td>1701883800</td>
+<td>...</td>
 <td>1.702166e+09</td>
 <td>1701993540</td>
 <td>1.702166e+09</td>
 <td>157497847</td>
 <td>157497847</td>
 <td>42161</td>
+<td>GPT Internal Round</td>
+<td>private</td>
+<td>0xd6d47d4f0b2384ab2df470c6a16e3fd241b8fb2b</td>
+<td>False</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
@@ -535,19 +647,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>bafkreibk3lzkasdvzsuinbotaimkwv6nhxee2zp2amrf5...</td>
 <td>{'lastUpdatedOn': 1701541787075, 'applicationS...</td>
 <td>bafkreic2z4h33bicge6afddigf3fivulb2aoaosui7fnq...</td>
-<td>{"feesPercentage": 0, "feesAddress": "", "name...</td>
-<td>1701541800</td>
+<td>...</td>
 <td>1.701724e+09</td>
 <td>1701561600</td>
 <td>1.701724e+09</td>
 <td>156241985</td>
 <td>156241985</td>
 <td>42161</td>
+<td>GPT Round Internal</td>
+<td>private</td>
+<td>0xe71d74a696fd8b80a5aa770dd582fb52ec17f9a9</td>
+<td>False</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>0x302Dbc8eB3bf73565A1205648B61b23CB3f72Ff7</td>
-<td>8795.198222</td>
+<td>8796.982192</td>
 <td>2971</td>
 <td>0x912ce59144191c1204e64559fe8253a0e49e6548</td>
 <td>7.500000e+22</td>
@@ -556,14 +671,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>bafkreibq4qfldppjpmcwmdgj6e2cz6weqihwyzqd4gu5g...</td>
 <td>{'lastUpdatedOn': 1701102231738, 'applicationS...</td>
 <td>bafkreia3okgfhb4367ro6qawohqqqi4zbydd44ybsshow...</td>
-<td>{"feesPercentage": 0, "feesAddress": "", "name...</td>
-<td>1701102600</td>
+<td>...</td>
 <td>1.702426e+09</td>
 <td>1701129600</td>
 <td>1.702426e+09</td>
 <td>154645606</td>
 <td>154645606</td>
 <td>42161</td>
+<td>American Cancer Society</td>
+<td>public</td>
+<td>0xc869181c8ad1d3689a9ccaa1321eb106f518895a</td>
+<td>False</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
@@ -577,14 +695,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>bafkreideewpkktzagxbcpljwl7xlnpjs5ctta2lo33pzs...</td>
 <td>{'lastUpdatedOn': 1701098056494, 'applicationS...</td>
 <td>bafkreigspqpzoo4bhdvgfyub4zt2ayzmfiy2mppxm5lgf...</td>
-<td>{"feesPercentage": 0, "feesAddress": "", "name...</td>
-<td>1701100800</td>
+<td>...</td>
 <td>1.703290e+09</td>
 <td>1702252800</td>
 <td>1.703290e+09</td>
 <td>154629810</td>
 <td>154629810</td>
 <td>42161</td>
+<td>LunCo Alpha QF</td>
+<td>public</td>
+<td>0x263e7a6b847cd432ee9d6f20cc843672ce046e03</td>
+<td>False</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
@@ -598,14 +719,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>bafkreidjtodp7owb5b6ta2gzdjn7gn3bn4lo47tbb3dd6...</td>
 <td>{'lastUpdatedOn': 1701097316391, 'applicationS...</td>
 <td>bafkreih4ppi3wtqfhhlsfyxrgfabhdtuljokn7igrt552...</td>
-<td>{"feesPercentage": 0, "feesAddress": "", "name...</td>
-<td>1701099000</td>
+<td>...</td>
 <td>1.702426e+09</td>
 <td>1701129600</td>
 <td>1.702426e+09</td>
 <td>154626834</td>
 <td>154626834</td>
 <td>42161</td>
+<td>American Cancer Society</td>
+<td>private</td>
+<td>0x4d272ea21f84db89424fc81c49040cc583853bdc</td>
+<td>False</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">5</td>
@@ -619,14 +743,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>bafkreia7ri3lvr7rt2cxwns2t5m2ckq2bjjw47lcin7ol...</td>
 <td>{'lastUpdatedOn': 1700842457598, 'applicationS...</td>
 <td>bafkreif5ngqx6qporajw2uiqlpysqbdzogkllg6pn2gra...</td>
-<td>{"feesPercentage": 0, "feesAddress": "", "name...</td>
-<td>1700845200</td>
+<td>...</td>
 <td>1.702339e+09</td>
 <td>1701086400</td>
 <td>1.702339e+09</td>
 <td>153655116</td>
 <td>153655116</td>
 <td>42161</td>
+<td>American Cancer Society</td>
+<td>public</td>
+<td>0xb7b66431d214ff01d0c3cb64e3c66d29c4b5c938</td>
+<td>False</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">6</td>
@@ -640,14 +767,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>bafkreico4xgx233rzrqqmhcwa73vejclj2ethlui725fb...</td>
 <td>{'lastUpdatedOn': 1700835549100, 'applicationS...</td>
 <td>bafkreiezs6ndr2mml7nsdkfkiv3zrkg6iwaeav5bizcom...</td>
-<td>{"feesPercentage": 0, "feesAddress": "", "name...</td>
-<td>1701388800</td>
+<td>...</td>
 <td>1.157921e+77</td>
 <td>1701388800</td>
 <td>1.157921e+77</td>
 <td>153628011</td>
 <td>153628011</td>
 <td>42161</td>
+<td>Microgrants</td>
+<td>public</td>
+<td>0x71e4419cda0705ab913d0c17818a6a24564a6bdd</td>
+<td>NaN</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">7</td>
@@ -661,14 +791,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>bafkreidgghtkyyjeemh47rcqoskaspu7gortvq57w6hyp...</td>
 <td>{'lastUpdatedOn': 1700832116919, 'applicationS...</td>
 <td>bafkreicbnwdssvo7ivaig7iml7vhpumd6nejo2bg6kth5...</td>
-<td>{"feesPercentage": 0, "feesAddress": "", "name...</td>
-<td>1700870400</td>
+<td>...</td>
 <td>1.157921e+77</td>
 <td>1700870400</td>
 <td>1.157921e+77</td>
 <td>153614761</td>
 <td>153614761</td>
 <td>42161</td>
+<td>Sov's Direct Grants Extravaganza</td>
+<td>private</td>
+<td>0xc413d1d5fbfb8df78de267fdb942875bf6ef7d7f</td>
+<td>NaN</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">8</td>
@@ -682,14 +815,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>bafkreicy4w5hweywhg7pd4dzzcev52s7bopttvpbl4wn2...</td>
 <td>{'lastUpdatedOn': 1700801533914, 'applicationS...</td>
 <td>bafkreibfaodqjmbbb2pmteu6sycei36plcd5n6uu3hi4k...</td>
-<td>{"feesPercentage": 0, "feesAddress": "", "name...</td>
-<td>1700850600</td>
+<td>...</td>
 <td>1.157921e+77</td>
 <td>1700850600</td>
 <td>1.157921e+77</td>
 <td>153494560</td>
 <td>153494560</td>
 <td>42161</td>
+<td>Test Grant</td>
+<td>public</td>
+<td>0x436b05a2158790b0e1b29cd840863a2a45c144ae</td>
+<td>NaN</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">9</td>
@@ -703,30 +839,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>bafkreigypvtky37wnatkuekytcxmbple337imt7nqk4gi...</td>
 <td>{'lastUpdatedOn': 1700762781329, 'applicationS...</td>
 <td>bafkreicmf4k22iknkigaatoww4ji2sdxw6ofsc4d7n747...</td>
-<td>{"feesPercentage": 0, "feesAddress": "", "name...</td>
-<td>1700784000</td>
+<td>...</td>
 <td>1.157921e+77</td>
 <td>1700784000</td>
 <td>1.157921e+77</td>
 <td>153348089</td>
 <td>153348089</td>
 <td>42161</td>
+<td>GMX DAO Grants</td>
+<td>public</td>
+<td>0x3f02dd0200209a14bb40ffa7157232a00d04fd02</td>
+<td>NaN</td>
 </tr>
 </tbody>
 </table>
 
+<p>10 rows × 22 columns</p>
 </div>
 </div>
 </div>
 </section>
 <section id="votes" class="level3">
 <h3 class="anchored" data-anchor-id="votes">Votes</h3>
-<div id="cell-12" class="cell" data-execution_count="14">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>query(<span class="st">"from round_votes order by amount_usd desc limit 10"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>duckdb.sql(<span class="ss">f"from '</span><span class="sc">{</span>GATEWAY_URL<span class="sc">}</span><span class="ss">/round_votes.parquet order by amount_usd desc limit 10"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
 
@@ -916,100 +1053,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="sample-queries" class="level2">
-<h2 class="anchored" data-anchor-id="sample-queries">Sample Queries</h2>
-<p>Top contributors for chain 1!</p>
-<div id="cell-15" class="cell" data-execution_count="15">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>query(</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"""</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="st">    select</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="st">        voter,</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="st">        sum(amount_usd)</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="st">    from round_votes</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="st">    where chain_id = 1</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="st">    group by 1</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="st">    order by 2 desc</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="st">    limit 10</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="st">    """</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="15">
-<div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">voter</th>
-<th data-quarto-table-cell-role="th">sum(amount_usd)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>0x8a205728f464b0755f72780df1763d1e1f0f5ba5</td>
-<td>8087.002244</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>0xbd4eb0295468c80725017f74113f5aebbd6e8d12</td>
-<td>6810.616077</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>0x839395e20bbb182fa440d08f850e6c7a8f6f0780</td>
-<td>5887.459406</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>0xd88d5b3dbe8790369799012310c31eb210eeec81</td>
-<td>5079.673008</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>0x0fc338d0a925fa564171d1d7c0ffdb271ad19d49</td>
-<td>4727.462260</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>0x471e96a01962b62fe3e9e8e367f6be56e3e983d0</td>
-<td>4596.338842</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
-<td>0xc6d7522f7b012b22bc365c9c43b3dbf13b9aaff9</td>
-<td>3420.906163</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
-<td>0xb13b2db51ca77ea06b1d3e83f2615006e9a4bdad</td>
-<td>3199.346490</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
-<td>0xd21d931890d27b6e7e2e668f27931e17698e90f1</td>
-<td>3194.710788</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
-<td>0xfc66a1f969bb77eb89a314725d657312d58f1589</td>
-<td>2504.862395</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
 </section>
 
-</main>
-<!-- /main column -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1089,9 +1137,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1101,17 +1150,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1124,135 +1164,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        typesetMath(container);
-        return container.innerHTML
-      } else {
-        typesetMath(note);
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      typesetMath(note);
-      return note.innerHTML;
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1296,7 +1207,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1322,32 +1232,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1408,7 +1292,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-
 
 
 
