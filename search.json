@@ -4,7 +4,7 @@
     "href": "catalog.html",
     "title": "Catalog",
     "section": "",
-    "text": "Following parquet files can be accessed from ipfs, see the home page for instructions.\nRaw files are direct result of API fetch, while processed files have been cleaned and normalized.\nCurrent convention for processed files is to store address address in lowercase format. Columns are renamed to snake_case."
+    "text": "Following parquet files can be accessed from ipfs, see the home page for instructions.\nRaw files are direct result of API fetch, while processed files have been cleaned and normalized.\nCurrent convention for processed files is to store address in lowercase format. Columns are renamed to snake_case."
   },
   {
     "objectID": "catalog.html#processed-files",
