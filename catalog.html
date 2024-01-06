@@ -110,18 +110,11 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#processed-files" id="toc-processed-files" class="nav-link active" data-scroll-target="#processed-files">Processed Files</a></li>
-  <li><a href="#raw-files" id="toc-raw-files" class="nav-link" data-scroll-target="#raw-files">Raw Files</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -144,39 +137,33 @@ ul.task-list li input[type="checkbox"] {
 <p>Following parquet files can be accessed from <code>ipfs</code>, see the <strong>home</strong> page for instructions.</p>
 <p>Raw files are direct result of API fetch, while processed files have been cleaned and normalized.</p>
 <p>Current convention for processed files is to store <code>address</code> address in lowercase format. Columns are renamed to <code>snake_case</code>.</p>
-<div class="cell" data-tags="[&quot;hide_input&quot;]" data-execution_count="19">
-<div class="cell-output cell-output-stdout">
-<pre><code>Processed Files:
-application_answers.parquet
-chain_metadata.parquet
-passport_scores.parquet
-projects.parquet
-round_applications.parquet
-round_votes.parquet
-rounds.parquet
-
-Raw Files:
-public_raw_chain_metadata.parquet
-public_raw_passport_scores.parquet
-public_raw_prices.parquet
-public_raw_projects.parquet
-public_raw_round_applications.parquet
-public_raw_round_contributors.parquet
-public_raw_round_votes.parquet
-public_raw_rounds.parquet</code></pre>
-</div>
-</div>
+<section id="file-listing" class="level4">
+<h4 class="anchored" data-anchor-id="file-listing">File listing</h4>
+<p><strong>Processed Files:</strong><br>
+<a href="#application_answers.parquet">application_answers.parquet</a><br>
+<a href="#chain_metadata.parquet">chain_metadata.parquet</a><br>
+<a href="#passport_scores.parquet">passport_scores.parquet</a><br>
+<a href="#projects.parquet">projects.parquet</a><br>
+<a href="#round_applications.parquet">round_applications.parquet</a><br>
+<a href="#round_votes.parquet">round_votes.parquet</a><br>
+<a href="#rounds.parquet">rounds.parquet</a></p>
+<p><strong>Raw Files:</strong><br>
+<a href="#public_raw_chain_metadata.parquet">public_raw_chain_metadata.parquet</a><br>
+<a href="#public_raw_passport_scores.parquet">public_raw_passport_scores.parquet</a><br>
+<a href="#public_raw_prices.parquet">public_raw_prices.parquet</a><br>
+<a href="#public_raw_projects.parquet">public_raw_projects.parquet</a><br>
+<a href="#public_raw_round_applications.parquet">public_raw_round_applications.parquet</a><br>
+<a href="#public_raw_round_contributors.parquet">public_raw_round_contributors.parquet</a><br>
+<a href="#public_raw_round_votes.parquet">public_raw_round_votes.parquet</a><br>
+<a href="#public_raw_rounds.parquet">public_raw_rounds.parquet</a></p>
 <p>For each of the files you can find sample rows, and schema below.</p>
+</section>
 <section id="processed-files" class="level2">
 <h2 class="anchored" data-anchor-id="processed-files">Processed Files</h2>
-<div class="cell" data-execution_count="20">
-<section id="application_answers.parquet" class="level3 cell-output cell-output-display">
-<h3 class="anchored" data-anchor-id="application_answers.parquet">application_answers.parquet</h3>
 </section>
-<div class="cell-output cell-output-display">
+<section id="application_answers.parquet" class="level2">
+<h2 class="anchored" data-anchor-id="application_answers.parquet"><a href="#file-listing">application_answers.parquet</a></h2>
 <p>question_id: string<br>project_id: string<br>application_id: int64<br>chain_id: string<br>round_id: string<br>question: string<br>question_type: string<br>answer: string</p>
-</div>
-<div class="cell-output cell-output-display">
 <div>
 
 
@@ -243,14 +230,10 @@ public_raw_rounds.parquet</code></pre>
 </table>
 
 </div>
-</div>
-<section id="chain_metadata.parquet" class="level3 cell-output cell-output-display">
-<h3 class="anchored" data-anchor-id="chain_metadata.parquet">chain_metadata.parquet</h3>
 </section>
-<div class="cell-output cell-output-display">
+<section id="chain_metadata.parquet" class="level2">
+<h2 class="anchored" data-anchor-id="chain_metadata.parquet"><a href="#file-listing">chain_metadata.parquet</a></h2>
 <p>name: string<br>short_name: string<br>info_url: string<br>chain_id: string<br>network_id: int64<br>native_currency: struct&lt;name: string, symbol: string, decimals: int32&gt;<br> child 0, name: string<br> child 1, symbol: string<br> child 2, decimals: int32<br>ens: struct&lt;registry: string&gt;<br> child 0, registry: string<br>explorers: list&lt;element: map&lt;string, string (‘element’)&gt;&gt;<br> child 0, element: map&lt;string, string (‘element’)&gt;<br> child 0, element: struct&lt;key: string not null, value: string&gt; not null<br> child 0, key: string not null<br> child 1, value: string<br>rpc: list&lt;element: string&gt;<br> child 0, element: string<br>parent: struct&lt;type: string, chain: string, bridges: list&lt;element: struct&lt;url: string&gt;&gt;&gt;<br> child 0, type: string<br> child 1, chain: string<br> child 2, bridges: list&lt;element: struct&lt;url: string&gt;&gt;<br> child 0, element: struct&lt;url: string&gt;<br> child 0, url: string</p>
-</div>
-<div class="cell-output cell-output-display">
 <div>
 
 
@@ -327,14 +310,10 @@ public_raw_rounds.parquet</code></pre>
 </table>
 
 </div>
-</div>
-<section id="passport_scores.parquet" class="level3 cell-output cell-output-display">
-<h3 class="anchored" data-anchor-id="passport_scores.parquet">passport_scores.parquet</h3>
 </section>
-<div class="cell-output cell-output-display">
+<section id="passport_scores.parquet" class="level2">
+<h2 class="anchored" data-anchor-id="passport_scores.parquet"><a href="#file-listing">passport_scores.parquet</a></h2>
 <p>address: string<br>score: int64<br>status: string<br>last_score_timestamp: timestamp[us, tz=UTC]<br>evidence_type: string<br>evidence_success: string<br>evidence_raw_score: string<br>evidence_threshold: string</p>
-</div>
-<div class="cell-output cell-output-display">
 <div>
 
 
@@ -401,14 +380,10 @@ public_raw_rounds.parquet</code></pre>
 </table>
 
 </div>
-</div>
-<section id="projects.parquet" class="level3 cell-output cell-output-display">
-<h3 class="anchored" data-anchor-id="projects.parquet">projects.parquet</h3>
 </section>
-<div class="cell-output cell-output-display">
+<section id="projects.parquet" class="level2">
+<h2 class="anchored" data-anchor-id="projects.parquet"><a href="#file-listing">projects.parquet</a></h2>
 <p>project_id: string<br>project_number: int64<br>meta_ptr: string<br>metadata: string<br>owners: list&lt;element: string&gt;<br> child 0, element: string<br>created_at_block: int64<br>chain_id: string<br>title: string<br>description: string<br>website: string<br>project_twitter: string<br>logo_image: string<br>banner_image: string<br>created_at: decimal128(18, 3)</p>
-</div>
-<div class="cell-output cell-output-display">
 <div>
 
 
@@ -505,14 +480,10 @@ public_raw_rounds.parquet</code></pre>
 </table>
 
 </div>
-</div>
-<section id="round_applications.parquet" class="level3 cell-output cell-output-display">
-<h3 class="anchored" data-anchor-id="round_applications.parquet">round_applications.parquet</h3>
 </section>
-<div class="cell-output cell-output-display">
+<section id="round_applications.parquet" class="level2">
+<h2 class="anchored" data-anchor-id="round_applications.parquet"><a href="#file-listing">round_applications.parquet</a></h2>
 <p>chain_id: string<br>round_id: string<br>id: int64<br>project_id: string<br>status: string<br>amount_usd: double<br>votes: int64<br>unique_contributors: int64<br>metadata: string<br>created_at_block: int64<br>status_updated_at_block: int64<br>status_snapshots: list&lt;element: struct&lt;status: string, statusUpdatedAtBlock: int32&gt;&gt;<br> child 0, element: struct&lt;status: string, statusUpdatedAtBlock: int32&gt;<br> child 0, status: string<br> child 1, statusUpdatedAtBlock: int32<br>signature: string<br>recipient: string</p>
-</div>
-<div class="cell-output cell-output-display">
 <div>
 
 
@@ -609,14 +580,10 @@ public_raw_rounds.parquet</code></pre>
 </table>
 
 </div>
-</div>
-<section id="round_votes.parquet" class="level3 cell-output cell-output-display">
-<h3 class="anchored" data-anchor-id="round_votes.parquet">round_votes.parquet</h3>
 </section>
-<div class="cell-output cell-output-display">
+<section id="round_votes.parquet" class="level2">
+<h2 class="anchored" data-anchor-id="round_votes.parquet"><a href="#file-listing">round_votes.parquet</a></h2>
 <p>chain_id: string<br>round_id: string<br>id: string<br>transaction: string<br>block_number: int64<br>project_id: string<br>application_id: int64<br>voter: string<br>grant_address: string<br>token: string<br>amount: double<br>amount_usd: double<br>amount_round_token: double</p>
-</div>
-<div class="cell-output cell-output-display">
 <div>
 
 
@@ -708,14 +675,10 @@ public_raw_rounds.parquet</code></pre>
 </table>
 
 </div>
-</div>
-<section id="rounds.parquet" class="level3 cell-output cell-output-display">
-<h3 class="anchored" data-anchor-id="rounds.parquet">rounds.parquet</h3>
 </section>
-<div class="cell-output cell-output-display">
+<section id="rounds.parquet" class="level2">
+<h2 class="anchored" data-anchor-id="rounds.parquet"><a href="#file-listing">rounds.parquet</a></h2>
 <p>id: string<br>amount_usd: double<br>votes: int64<br>token: string<br>match_amount: double<br>match_amount_usd: double<br>unique_contributors: int64<br>application_meta_ptr: string<br>application_metadata: string<br>meta_ptr: string<br>metadata: string<br>applications_start_time: int64<br>applications_end_time: double<br>round_start_time: int64<br>round_end_time: double<br>created_at_block: int64<br>updated_at_block: int64<br>chain_id: string<br>name: string<br>round_type: string<br>program_address: string<br>sybil_defense: bool</p>
-</div>
-<div class="cell-output cell-output-display">
 <div>
 
 
@@ -848,19 +811,13 @@ public_raw_rounds.parquet</code></pre>
 
 <p>4 rows × 22 columns</p>
 </div>
-</div>
-</div>
 </section>
 <section id="raw-files" class="level2">
 <h2 class="anchored" data-anchor-id="raw-files">Raw Files</h2>
-<div class="cell" data-execution_count="21">
-<section id="public_raw_chain_metadata.parquet" class="level3 cell-output cell-output-display">
-<h3 class="anchored" data-anchor-id="public_raw_chain_metadata.parquet">public_raw_chain_metadata.parquet</h3>
 </section>
-<div class="cell-output cell-output-display">
+<section id="public_raw_chain_metadata.parquet" class="level2">
+<h2 class="anchored" data-anchor-id="public_raw_chain_metadata.parquet"><a href="#file-listing">public_raw_chain_metadata.parquet</a></h2>
 <p>name: string<br>chain: string<br>icon: string<br>rpc: list&lt;element: string&gt;<br> child 0, element: string<br>features: list&lt;element: struct&lt;name: string&gt;&gt;<br> child 0, element: struct&lt;name: string&gt;<br> child 0, name: string<br>faucets: list&lt;element: int32&gt;<br> child 0, element: int32<br>nativeCurrency: struct&lt;name: string, symbol: string, decimals: int32&gt;<br> child 0, name: string<br> child 1, symbol: string<br> child 2, decimals: int32<br>infoURL: string<br>shortName: string<br>chainId: string<br>networkId: int64<br>slip44: int64<br>ens: struct&lt;registry: string&gt;<br> child 0, registry: string<br>explorers: list&lt;element: map&lt;string, string (‘element’)&gt;&gt;<br> child 0, element: map&lt;string, string (‘element’)&gt;<br> child 0, element: struct&lt;key: string not null, value: string&gt; not null<br> child 0, key: string not null<br> child 1, value: string<br>title: string<br>status: string<br>redFlags: int32<br>parent: struct&lt;type: string, chain: string, bridges: list&lt;element: struct&lt;url: string&gt;&gt;&gt;<br> child 0, type: string<br> child 1, chain: string<br> child 2, bridges: list&lt;element: struct&lt;url: string&gt;&gt;<br> child 0, element: struct&lt;url: string&gt;<br> child 0, url: string</p>
-</div>
-<div class="cell-output cell-output-display">
 <div>
 
 
@@ -977,14 +934,10 @@ public_raw_rounds.parquet</code></pre>
 </table>
 
 </div>
-</div>
-<section id="public_raw_passport_scores.parquet" class="level3 cell-output cell-output-display">
-<h3 class="anchored" data-anchor-id="public_raw_passport_scores.parquet">public_raw_passport_scores.parquet</h3>
 </section>
-<div class="cell-output cell-output-display">
+<section id="public_raw_passport_scores.parquet" class="level2">
+<h2 class="anchored" data-anchor-id="public_raw_passport_scores.parquet"><a href="#file-listing">public_raw_passport_scores.parquet</a></h2>
 <p>address: string<br>score: int64<br>last_score_timestamp: timestamp[us, tz=UTC]<br>status: string<br>evidence: struct&lt;type: string, success: bool, rawScore: string, threshold: string&gt;<br> child 0, type: string<br> child 1, success: bool<br> child 2, rawScore: string<br> child 3, threshold: string<br>id: int64</p>
-</div>
-<div class="cell-output cell-output-display">
 <div>
 
 
@@ -1041,14 +994,10 @@ public_raw_rounds.parquet</code></pre>
 </table>
 
 </div>
-</div>
-<section id="public_raw_prices.parquet" class="level3 cell-output cell-output-display">
-<h3 class="anchored" data-anchor-id="public_raw_prices.parquet">public_raw_prices.parquet</h3>
 </section>
-<div class="cell-output cell-output-display">
+<section id="public_raw_prices.parquet" class="level2">
+<h2 class="anchored" data-anchor-id="public_raw_prices.parquet"><a href="#file-listing">public_raw_prices.parquet</a></h2>
 <p>token: string<br>code: string<br>price: double<br>timestamp: timestamp[us]<br>block: int64<br>chainId: string</p>
-</div>
-<div class="cell-output cell-output-display">
 <div>
 
 
@@ -1105,14 +1054,10 @@ public_raw_rounds.parquet</code></pre>
 </table>
 
 </div>
-</div>
-<section id="public_raw_projects.parquet" class="level3 cell-output cell-output-display">
-<h3 class="anchored" data-anchor-id="public_raw_projects.parquet">public_raw_projects.parquet</h3>
 </section>
-<div class="cell-output cell-output-display">
+<section id="public_raw_projects.parquet" class="level2">
+<h2 class="anchored" data-anchor-id="public_raw_projects.parquet"><a href="#file-listing">public_raw_projects.parquet</a></h2>
 <p>id: string<br>projectNumber: int64<br>metaPtr: string<br>metadata: string<br>owners: list&lt;element: string&gt;<br> child 0, element: string<br>createdAtBlock: int64<br>chainId: string</p>
-</div>
-<div class="cell-output cell-output-display">
 <div>
 
 
@@ -1174,14 +1119,10 @@ public_raw_rounds.parquet</code></pre>
 </table>
 
 </div>
-</div>
-<section id="public_raw_round_applications.parquet" class="level3 cell-output cell-output-display">
-<h3 class="anchored" data-anchor-id="public_raw_round_applications.parquet">public_raw_round_applications.parquet</h3>
 </section>
-<div class="cell-output cell-output-display">
+<section id="public_raw_round_applications.parquet" class="level2">
+<h2 class="anchored" data-anchor-id="public_raw_round_applications.parquet"><a href="#file-listing">public_raw_round_applications.parquet</a></h2>
 <p>chainId: string<br>roundId: string<br>id: int64<br>projectId: string<br>status: string<br>amountUSD: double<br>votes: int64<br>uniqueContributors: int64<br>metadata: string<br>createdAtBlock: int64<br>statusUpdatedAtBlock: int64<br>statusSnapshots: list&lt;element: struct&lt;status: string, statusUpdatedAtBlock: int32&gt;&gt;<br> child 0, element: struct&lt;status: string, statusUpdatedAtBlock: int32&gt;<br> child 0, status: string<br> child 1, statusUpdatedAtBlock: int32</p>
-</div>
-<div class="cell-output cell-output-display">
 <div>
 
 
@@ -1268,14 +1209,10 @@ public_raw_rounds.parquet</code></pre>
 </table>
 
 </div>
-</div>
-<section id="public_raw_round_contributors.parquet" class="level3 cell-output cell-output-display">
-<h3 class="anchored" data-anchor-id="public_raw_round_contributors.parquet">public_raw_round_contributors.parquet</h3>
 </section>
-<div class="cell-output cell-output-display">
+<section id="public_raw_round_contributors.parquet" class="level2">
+<h2 class="anchored" data-anchor-id="public_raw_round_contributors.parquet"><a href="#file-listing">public_raw_round_contributors.parquet</a></h2>
 <p>chainId: string<br>roundId: string<br>id: string<br>amountUSD: double<br>votes: int64</p>
-</div>
-<div class="cell-output cell-output-display">
 <div>
 
 
@@ -1327,14 +1264,10 @@ public_raw_rounds.parquet</code></pre>
 </table>
 
 </div>
-</div>
-<section id="public_raw_round_votes.parquet" class="level3 cell-output cell-output-display">
-<h3 class="anchored" data-anchor-id="public_raw_round_votes.parquet">public_raw_round_votes.parquet</h3>
 </section>
-<div class="cell-output cell-output-display">
+<section id="public_raw_round_votes.parquet" class="level2">
+<h2 class="anchored" data-anchor-id="public_raw_round_votes.parquet"><a href="#file-listing">public_raw_round_votes.parquet</a></h2>
 <p>chainId: string<br>roundId: string<br>id: string<br>transaction: string<br>blockNumber: int64<br>projectId: string<br>applicationId: int64<br>voter: string<br>grantAddress: string<br>token: string<br>amount: double<br>amountUSD: double<br>amountRoundToken: double</p>
-</div>
-<div class="cell-output cell-output-display">
 <div>
 
 
@@ -1426,14 +1359,10 @@ public_raw_rounds.parquet</code></pre>
 </table>
 
 </div>
-</div>
-<section id="public_raw_rounds.parquet" class="level3 cell-output cell-output-display">
-<h3 class="anchored" data-anchor-id="public_raw_rounds.parquet">public_raw_rounds.parquet</h3>
 </section>
-<div class="cell-output cell-output-display">
+<section id="public_raw_rounds.parquet" class="level2">
+<h2 class="anchored" data-anchor-id="public_raw_rounds.parquet"><a href="#file-listing">public_raw_rounds.parquet</a></h2>
 <p>id: string<br>amountUSD: double<br>votes: int64<br>token: string<br>matchAmount: double<br>matchAmountUSD: double<br>uniqueContributors: int64<br>applicationMetaPtr: string<br>applicationMetadata: string<br>metaPtr: string<br>metadata: string<br>applicationsStartTime: int64<br>applicationsEndTime: double<br>roundStartTime: int64<br>roundEndTime: double<br>createdAtBlock: int64<br>updatedAtBlock: int64<br>chainId: string</p>
-</div>
-<div class="cell-output cell-output-display">
 <div>
 
 
@@ -1549,8 +1478,6 @@ public_raw_rounds.parquet</code></pre>
 </tbody>
 </table>
 
-</div>
-</div>
 </div>
 
 
