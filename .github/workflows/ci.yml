@@ -19,6 +19,9 @@ jobs:
       with:
         python-version: 3.11
         cache: pip
+        
+    - name: Install Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
 
     - name: Install dependencies
       run: |
