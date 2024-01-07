@@ -36,6 +36,11 @@ def read_json_with_retry(json_path):
     return pd.read_json(response.text)
 
 
+@retry(tries=8, delay=2, backoff=2, max_delay=10)
+def read_parquet_with_retry(path):
+    return pd.read_parquet(path)
+
+
 def round_file_aggregator(json_name):
     fs = HTTPFileSystem(simple_links=True)
     paths = fs.ls(ALLO_INDEXER_URL)
@@ -147,3 +152,16 @@ def raw_chain_metadata(raw_rounds: pd.DataFrame) -> pd.DataFrame:
     filtered_df = df[df.chainId.isin(interesting_chains)]
 
     return filtered_df
+
+
+@asset
+def raw_allo_deployments() -> pd.DataFrame:
+    """
+    Stale asset with deployment address for all official Allo contracts, collated on 07.01.24
+
+    Canonical source: https://github.com/allo-protocol/allo-contracts/blob/main/docs/CHAINS.md
+    """
+    REMOTE_DATAFRAME_CID = "https://cloudflare-ipfs.com/ipfs/QmWpnErRwVRLqdGsBC2J9NMngwzJtWErDZvf6wDqJ1ZVis"
+    df_from_ipfs = read_parquet_with_retry(REMOTE_DATAFRAME_CID)
+    df_from_ipfs = df_from_ipfs.convert_dtypes()
+    return df_from_ipfs
