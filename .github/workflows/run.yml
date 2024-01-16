@@ -65,7 +65,7 @@ jobs:
         path: ./data/tables
         service: filebase
         pinName: gitcoin-grants-data-portal-tables
-        filebaseBucket: gitcoin-grants-data-portal
+        filebaseBucket: dev-gitcoin-grants-data-portal
         filebaseKey: ${{ secrets.FILEBASE_KEY }}
         filebaseSecret: ${{ secrets.FILEBASE_SECRET }}
         key: gitcoin-grants-data-portal-db
