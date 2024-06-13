@@ -1,4 +1,5 @@
 import io
+import itertools
 import json
 
 import pandas as pd
@@ -106,3 +107,39 @@ class GrantsStackIndexerGraphQL(ConfigurableResource):
             page += 1
 
         return output
+
+
+
+class NeynarAPIResource(ConfigurableResource):
+    """
+    Neynar API to interact with farcaster.
+    """
+    API_KEY: str
+    ROOT: str = "https://api.neynar.com/v2/"
+
+    def scan_ethereum_addresses():
+        pass
+
+        
+    def get_addresses(self,address_list):
+        result = requests.get(
+            self.ROOT + "farcaster/user/bulk-by-address",
+            headers={
+                "Content-Type": "application/json",
+                "api_key": self.API_KEY
+            },
+            params={"addresses": ",".join(address_list)},
+        )
+
+        result.raise_for_status()
+        return result.json()
+
+
+
+
+
+    def post_new_cast():
+        """
+        Create new post on farcaster with specific content. 
+        """
+        pass
